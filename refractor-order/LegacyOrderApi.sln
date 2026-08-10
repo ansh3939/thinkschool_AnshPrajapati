@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LegacyOrderApi", "LegacyOrderApi\LegacyOrderApi.csproj", "{73B6418E-B0FA-4870-9ACC-A298B2ACD6A4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LegacyOrderApi.Tests", "LegacyOrderApi.Tests\LegacyOrderApi.Tests.csproj", "{61C03D3B-9819-42B7-A32B-C3ACC4A3BF67}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73B6418E-B0FA-4870-9ACC-A298B2ACD6A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73B6418E-B0FA-4870-9ACC-A298B2ACD6A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73B6418E-B0FA-4870-9ACC-A298B2ACD6A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73B6418E-B0FA-4870-9ACC-A298B2ACD6A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61C03D3B-9819-42B7-A32B-C3ACC4A3BF67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61C03D3B-9819-42B7-A32B-C3ACC4A3BF67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61C03D3B-9819-42B7-A32B-C3ACC4A3BF67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61C03D3B-9819-42B7-A32B-C3ACC4A3BF67}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

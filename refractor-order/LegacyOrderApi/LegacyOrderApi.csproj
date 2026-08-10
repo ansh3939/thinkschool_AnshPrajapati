@@ -13,4 +13,14 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="10.0.0" />
   </ItemGroup>
 
+  <!-- original/ is a separate, independently-buildable project (see
+       original/LegacyOrderApi.Original.csproj). It must be excluded here,
+       otherwise the default SDK glob would compile its classes twice. -->
+  <ItemGroup>
+    <Compile Remove="original/**/*.cs" />
+    <Content Remove="original/**/*" />
+    <None Remove="original/**/*" />
+    <Compile Remove="bin/**/*.cs;obj/**/*.cs" />
+  </ItemGroup>
+
 </Project>
