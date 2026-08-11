@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>LegacyOrderApi</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="10.0.0" />
+  </ItemGroup>
+
+  <!-- original/ is a separate, independently-buildable project (see
+       original/LegacyOrderApi.Original.csproj). It must be excluded here,
+       otherwise the default SDK glob would compile its classes twice. -->
+  <ItemGroup>
+    <Compile Remove="original/**/*.cs" />
+    <Content Remove="original/**/*" />
+    <None Remove="original/**/*" />
+    <Compile Remove="bin/**/*.cs;obj/**/*.cs" />
+  </ItemGroup>
+
+</Project>
