@@ -2,8 +2,6 @@ name: CI
 
 on:
   push:
-    branches:
-      - '**'
   pull_request:
     branches:
       - main
@@ -12,10 +10,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: day-4/task-1
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -23,23 +17,23 @@ jobs:
       - name: Setup .NET 10
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '10.0.x'
+          dotnet-version: "10.0.x"
 
       - name: Restore
-        run: dotnet restore Quotes.Tests.Integration.sln
+        run: dotnet restore day-4/task-1/Quotes.Tests.Integration.sln
 
       - name: Build
-        run: dotnet build Quotes.Tests.Integration.sln --no-restore
+        run: dotnet build day-4/task-1/Quotes.Tests.Integration.sln --no-restore
 
       - name: Test
-        run: dotnet test Quotes.Tests.Integration.sln --no-build --logger "trx;LogFileName=test-results.trx" --collect:"XPlat Code Coverage"
+        run: dotnet test day-4/task-1/Quotes.Tests.Integration.sln --no-build --logger "trx;LogFileName=test-results.trx" --collect:"XPlat Code Coverage" --results-directory day-4/task-1/TestResults
 
       - name: Upload test results
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: test-results
-          path: day-4/task-1/**/*.trx
+          path: day-4/task-1/TestResults/*.trx
           if-no-files-found: warn
 
       - name: Upload coverage report
@@ -47,22 +41,22 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: coverage-report
-          path: day-4/task-1/**/coverage.cobertura.xml
+          path: day-4/task-1/TestResults/*/coverage.cobertura.xml
           if-no-files-found: warn
 
       - name: Enforce code coverage threshold
         if: always()
         run: |
-          python3 - <<'EOF'
+          python3 - <<'PYEOF'
           import glob
           import sys
           import xml.etree.ElementTree as ET
 
           THRESHOLD = 70.0
 
-          files = sorted(glob.glob("**/coverage.cobertura.xml", recursive=True))
+          files = sorted(glob.glob("day-4/task-1/TestResults/*/coverage.cobertura.xml"))
           if not files:
-              print("No coverage.cobertura.xml files found under the working directory")
+              print("No coverage.cobertura.xml files found under day-4/task-1/TestResults")
               sys.exit(1)
 
           covered = 0
@@ -87,4 +81,4 @@ jobs:
               sys.exit(1)
 
           print(f"PASS: coverage {pct:.2f}% meets the required {THRESHOLD:.0f}% threshold")
-          EOF
+          PYEOF
