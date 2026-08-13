@@ -1,0 +1,10 @@
+QuotesApi/bin/
+QuotesApi/obj/
+Quotes.Tests.Integration/bin/
+Quotes.Tests.Integration/obj/
+QuotesApi/*.db
+QuotesApi/*.db-shm
+QuotesApi/*.db-wal
+TestResults/
+.DS_Store
+__MACOSX/
