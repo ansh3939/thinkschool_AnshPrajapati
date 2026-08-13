@@ -1,0 +1,33 @@
+name: Day 3 Task 7 CI
+
+on:
+  push:
+    paths:
+      - "day-3/task-7/**"
+      - ".github/workflows/task-7-ci.yml"
+  pull_request:
+    paths:
+      - "day-3/task-7/**"
+      - ".github/workflows/task-7-ci.yml"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "10.0.x"
+
+      - name: Restore
+        run: dotnet restore day-3/task-7/Quotes.Tests.Integration.sln
+
+      - name: Build
+        run: dotnet build day-3/task-7/Quotes.Tests.Integration.sln --no-restore
+
+      - name: Test
+        run: dotnet test day-3/task-7/Quotes.Tests.Integration.sln --no-build --verbosity normal
