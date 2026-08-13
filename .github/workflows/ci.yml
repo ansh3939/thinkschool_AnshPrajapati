@@ -1,0 +1,84 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 10
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "10.0.x"
+
+      - name: Restore
+        run: dotnet restore day-4/task-1/Quotes.Tests.Integration.sln
+
+      - name: Build
+        run: dotnet build day-4/task-1/Quotes.Tests.Integration.sln --no-restore
+
+      - name: Test
+        run: dotnet test day-4/task-1/Quotes.Tests.Integration.sln --no-build --logger "trx;LogFileName=test-results.trx" --collect:"XPlat Code Coverage" --results-directory day-4/task-1/TestResults
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: day-4/task-1/TestResults/*.trx
+          if-no-files-found: warn
+
+      - name: Upload coverage report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: day-4/task-1/TestResults/*/coverage.cobertura.xml
+          if-no-files-found: warn
+
+      - name: Enforce code coverage threshold
+        if: always()
+        run: |
+          python3 - <<'PYEOF'
+          import glob
+          import sys
+          import xml.etree.ElementTree as ET
+
+          THRESHOLD = 70.0
+
+          files = sorted(glob.glob("day-4/task-1/TestResults/*/coverage.cobertura.xml"))
+          if not files:
+              print("No coverage.cobertura.xml files found under day-4/task-1/TestResults")
+              sys.exit(1)
+
+          covered = 0
+          valid = 0
+          for f in files:
+              root = ET.parse(f).getroot()
+              file_covered = int(root.get("lines-covered", "0"))
+              file_valid = int(root.get("lines-valid", "0"))
+              covered += file_covered
+              valid += file_valid
+              print(f"{f}: lines-covered={file_covered} lines-valid={file_valid}")
+
+          if valid == 0:
+              print("No valid lines reported in coverage data")
+              sys.exit(1)
+
+          pct = covered / valid * 100
+          print(f"Total line coverage: {pct:.2f}% ({covered}/{valid} lines)")
+
+          if pct < THRESHOLD:
+              print(f"FAIL: coverage {pct:.2f}% is below the required {THRESHOLD:.0f}% threshold")
+              sys.exit(1)
+
+          print(f"PASS: coverage {pct:.2f}% meets the required {THRESHOLD:.0f}% threshold")
+          PYEOF
