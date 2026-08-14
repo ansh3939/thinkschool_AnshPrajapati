@@ -1,0 +1,9 @@
+QuotesApi/bin/
+QuotesApi/obj/
+QuotesApi.Tests/bin/
+QuotesApi.Tests/obj/
+QuotesApi/*.db
+QuotesApi/*.db-shm
+QuotesApi/*.db-wal
+TestResults/
+.DS_Store
