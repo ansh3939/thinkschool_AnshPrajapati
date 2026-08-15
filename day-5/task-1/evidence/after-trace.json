@@ -1,0 +1,628 @@
+{
+  "data": [
+    {
+      "traceID": "6174c10ac819712e0fee6b1c185fed56",
+      "spans": [
+        {
+          "traceID": "6174c10ac819712e0fee6b1c185fed56",
+          "spanID": "da203f67783a0e06",
+          "operationName": "main",
+          "references": [
+            {
+              "refType": "CHILD_OF",
+              "traceID": "6174c10ac819712e0fee6b1c185fed56",
+              "spanID": "f8a43d86414bd230"
+            }
+          ],
+          "startTime": 1786739382764613,
+          "duration": 15615,
+          "tags": [
+            {
+              "key": "db.name",
+              "type": "string",
+              "value": "main"
+            },
+            {
+              "key": "db.statement",
+              "type": "string",
+              "value": "SELECT \"q\".\"Id\", \"q\".\"OwnerId\", \"q\".\"Text\"\nFROM \"Quotes\" AS \"q\"\nORDER BY \"q\".\"Id\""
+            },
+            {
+              "key": "db.system",
+              "type": "string",
+              "value": "sqlite"
+            },
+            {
+              "key": "otel.scope.name",
+              "type": "string",
+              "value": "OpenTelemetry.Instrumentation.EntityFrameworkCore"
+            },
+            {
+              "key": "otel.scope.version",
+              "type": "string",
+              "value": "1.17.0-beta.1"
+            },
+            {
+              "key": "peer.service",
+              "type": "string",
+              "value": "/Users/anshprajapati/Desktop/Thinkschool/thinkschool/day-5/task-1/QuotesApi/quotes.db"
+            },
+            {
+              "key": "span.kind",
+              "type": "string",
+              "value": "client"
+            }
+          ],
+          "logs": [],
+          "processID": "p1",
+          "warnings": null
+        },
+        {
+          "traceID": "6174c10ac819712e0fee6b1c185fed56",
+          "spanID": "f8a43d86414bd230",
+          "operationName": "GET /api/quotes",
+          "references": [],
+          "startTime": 1786739382666170,
+          "duration": 157067,
+          "tags": [
+            {
+              "key": "http.request.method",
+              "type": "string",
+              "value": "GET"
+            },
+            {
+              "key": "http.response.status_code",
+              "type": "int64",
+              "value": 200
+            },
+            {
+              "key": "http.route",
+              "type": "string",
+              "value": "/api/quotes"
+            },
+            {
+              "key": "network.protocol.version",
+              "type": "string",
+              "value": "1.1"
+            },
+            {
+              "key": "otel.scope.name",
+              "type": "string",
+              "value": "Microsoft.AspNetCore"
+            },
+            {
+              "key": "server.address",
+              "type": "string",
+              "value": "localhost"
+            },
+            {
+              "key": "server.port",
+              "type": "int64",
+              "value": 5501
+            },
+            {
+              "key": "span.kind",
+              "type": "string",
+              "value": "server"
+            },
+            {
+              "key": "url.path",
+              "type": "string",
+              "value": "/api/quotes"
+            },
+            {
+              "key": "url.scheme",
+              "type": "string",
+              "value": "http"
+            },
+            {
+              "key": "user_agent.original",
+              "type": "string",
+              "value": "curl/8.7.1"
+            }
+          ],
+          "logs": [],
+          "processID": "p1",
+          "warnings": null
+        }
+      ],
+      "processes": {
+        "p1": {
+          "serviceName": "QuotesApi",
+          "tags": [
+            {
+              "key": "service.instance.id",
+              "type": "string",
+              "value": "9a1d8a31-6bc8-4284-9d76-4f3567e48d13"
+            },
+            {
+              "key": "telemetry.sdk.language",
+              "type": "string",
+              "value": "dotnet"
+            },
+            {
+              "key": "telemetry.sdk.name",
+              "type": "string",
+              "value": "opentelemetry"
+            },
+            {
+              "key": "telemetry.sdk.version",
+              "type": "string",
+              "value": "1.17.0"
+            }
+          ]
+        }
+      },
+      "warnings": null
+    },
+    {
+      "traceID": "6ae8d8c10f8bfe346c73951043a77734",
+      "spans": [
+        {
+          "traceID": "6ae8d8c10f8bfe346c73951043a77734",
+          "spanID": "2f39f19c47055d02",
+          "operationName": "main",
+          "references": [
+            {
+              "refType": "CHILD_OF",
+              "traceID": "6ae8d8c10f8bfe346c73951043a77734",
+              "spanID": "e01e9b9d96384900"
+            }
+          ],
+          "startTime": 1786739382872040,
+          "duration": 413,
+          "tags": [
+            {
+              "key": "db.name",
+              "type": "string",
+              "value": "main"
+            },
+            {
+              "key": "db.statement",
+              "type": "string",
+              "value": "SELECT \"q\".\"Id\", \"q\".\"OwnerId\", \"q\".\"Text\"\nFROM \"Quotes\" AS \"q\"\nORDER BY \"q\".\"Id\""
+            },
+            {
+              "key": "db.system",
+              "type": "string",
+              "value": "sqlite"
+            },
+            {
+              "key": "otel.scope.name",
+              "type": "string",
+              "value": "OpenTelemetry.Instrumentation.EntityFrameworkCore"
+            },
+            {
+              "key": "otel.scope.version",
+              "type": "string",
+              "value": "1.17.0-beta.1"
+            },
+            {
+              "key": "peer.service",
+              "type": "string",
+              "value": "/Users/anshprajapati/Desktop/Thinkschool/thinkschool/day-5/task-1/QuotesApi/quotes.db"
+            },
+            {
+              "key": "span.kind",
+              "type": "string",
+              "value": "client"
+            }
+          ],
+          "logs": [],
+          "processID": "p1",
+          "warnings": null
+        },
+        {
+          "traceID": "6ae8d8c10f8bfe346c73951043a77734",
+          "spanID": "e01e9b9d96384900",
+          "operationName": "GET /api/quotes",
+          "references": [],
+          "startTime": 1786739382833348,
+          "duration": 40533,
+          "tags": [
+            {
+              "key": "http.request.method",
+              "type": "string",
+              "value": "GET"
+            },
+            {
+              "key": "http.response.status_code",
+              "type": "int64",
+              "value": 200
+            },
+            {
+              "key": "http.route",
+              "type": "string",
+              "value": "/api/quotes"
+            },
+            {
+              "key": "network.protocol.version",
+              "type": "string",
+              "value": "1.1"
+            },
+            {
+              "key": "otel.scope.name",
+              "type": "string",
+              "value": "Microsoft.AspNetCore"
+            },
+            {
+              "key": "server.address",
+              "type": "string",
+              "value": "localhost"
+            },
+            {
+              "key": "server.port",
+              "type": "int64",
+              "value": 5501
+            },
+            {
+              "key": "span.kind",
+              "type": "string",
+              "value": "server"
+            },
+            {
+              "key": "url.path",
+              "type": "string",
+              "value": "/api/quotes"
+            },
+            {
+              "key": "url.scheme",
+              "type": "string",
+              "value": "http"
+            },
+            {
+              "key": "user_agent.original",
+              "type": "string",
+              "value": "curl/8.7.1"
+            }
+          ],
+          "logs": [],
+          "processID": "p1",
+          "warnings": null
+        }
+      ],
+      "processes": {
+        "p1": {
+          "serviceName": "QuotesApi",
+          "tags": [
+            {
+              "key": "service.instance.id",
+              "type": "string",
+              "value": "9a1d8a31-6bc8-4284-9d76-4f3567e48d13"
+            },
+            {
+              "key": "telemetry.sdk.language",
+              "type": "string",
+              "value": "dotnet"
+            },
+            {
+              "key": "telemetry.sdk.name",
+              "type": "string",
+              "value": "opentelemetry"
+            },
+            {
+              "key": "telemetry.sdk.version",
+              "type": "string",
+              "value": "1.17.0"
+            }
+          ]
+        }
+      },
+      "warnings": null
+    },
+    {
+      "traceID": "9664fe23a8f935eba75243348cdbeb37",
+      "spans": [
+        {
+          "traceID": "9664fe23a8f935eba75243348cdbeb37",
+          "spanID": "155ef02a3916409a",
+          "operationName": "main",
+          "references": [
+            {
+              "refType": "CHILD_OF",
+              "traceID": "9664fe23a8f935eba75243348cdbeb37",
+              "spanID": "b2668f7de74828e1"
+            }
+          ],
+          "startTime": 1786739382888188,
+          "duration": 451,
+          "tags": [
+            {
+              "key": "db.name",
+              "type": "string",
+              "value": "main"
+            },
+            {
+              "key": "db.statement",
+              "type": "string",
+              "value": "SELECT \"q\".\"Id\", \"q\".\"OwnerId\", \"q\".\"Text\"\nFROM \"Quotes\" AS \"q\"\nORDER BY \"q\".\"Id\""
+            },
+            {
+              "key": "db.system",
+              "type": "string",
+              "value": "sqlite"
+            },
+            {
+              "key": "otel.scope.name",
+              "type": "string",
+              "value": "OpenTelemetry.Instrumentation.EntityFrameworkCore"
+            },
+            {
+              "key": "otel.scope.version",
+              "type": "string",
+              "value": "1.17.0-beta.1"
+            },
+            {
+              "key": "peer.service",
+              "type": "string",
+              "value": "/Users/anshprajapati/Desktop/Thinkschool/thinkschool/day-5/task-1/QuotesApi/quotes.db"
+            },
+            {
+              "key": "span.kind",
+              "type": "string",
+              "value": "client"
+            }
+          ],
+          "logs": [],
+          "processID": "p1",
+          "warnings": null
+        },
+        {
+          "traceID": "9664fe23a8f935eba75243348cdbeb37",
+          "spanID": "b2668f7de74828e1",
+          "operationName": "GET /api/quotes",
+          "references": [],
+          "startTime": 1786739382885414,
+          "duration": 4122,
+          "tags": [
+            {
+              "key": "http.request.method",
+              "type": "string",
+              "value": "GET"
+            },
+            {
+              "key": "http.response.status_code",
+              "type": "int64",
+              "value": 200
+            },
+            {
+              "key": "http.route",
+              "type": "string",
+              "value": "/api/quotes"
+            },
+            {
+              "key": "network.protocol.version",
+              "type": "string",
+              "value": "1.1"
+            },
+            {
+              "key": "otel.scope.name",
+              "type": "string",
+              "value": "Microsoft.AspNetCore"
+            },
+            {
+              "key": "server.address",
+              "type": "string",
+              "value": "localhost"
+            },
+            {
+              "key": "server.port",
+              "type": "int64",
+              "value": 5501
+            },
+            {
+              "key": "span.kind",
+              "type": "string",
+              "value": "server"
+            },
+            {
+              "key": "url.path",
+              "type": "string",
+              "value": "/api/quotes"
+            },
+            {
+              "key": "url.scheme",
+              "type": "string",
+              "value": "http"
+            },
+            {
+              "key": "user_agent.original",
+              "type": "string",
+              "value": "curl/8.7.1"
+            }
+          ],
+          "logs": [],
+          "processID": "p1",
+          "warnings": null
+        }
+      ],
+      "processes": {
+        "p1": {
+          "serviceName": "QuotesApi",
+          "tags": [
+            {
+              "key": "service.instance.id",
+              "type": "string",
+              "value": "9a1d8a31-6bc8-4284-9d76-4f3567e48d13"
+            },
+            {
+              "key": "telemetry.sdk.language",
+              "type": "string",
+              "value": "dotnet"
+            },
+            {
+              "key": "telemetry.sdk.name",
+              "type": "string",
+              "value": "opentelemetry"
+            },
+            {
+              "key": "telemetry.sdk.version",
+              "type": "string",
+              "value": "1.17.0"
+            }
+          ]
+        }
+      },
+      "warnings": null
+    },
+    {
+      "traceID": "470426934cbbfd02ef4cba333bb9744c",
+      "spans": [
+        {
+          "traceID": "470426934cbbfd02ef4cba333bb9744c",
+          "spanID": "311cde05d82abf72",
+          "operationName": "main",
+          "references": [
+            {
+              "refType": "CHILD_OF",
+              "traceID": "470426934cbbfd02ef4cba333bb9744c",
+              "spanID": "a076ef040376b5c9"
+            }
+          ],
+          "startTime": 1786739382901218,
+          "duration": 288,
+          "tags": [
+            {
+              "key": "db.name",
+              "type": "string",
+              "value": "main"
+            },
+            {
+              "key": "db.statement",
+              "type": "string",
+              "value": "SELECT \"q\".\"Id\", \"q\".\"OwnerId\", \"q\".\"Text\"\nFROM \"Quotes\" AS \"q\"\nORDER BY \"q\".\"Id\""
+            },
+            {
+              "key": "db.system",
+              "type": "string",
+              "value": "sqlite"
+            },
+            {
+              "key": "otel.scope.name",
+              "type": "string",
+              "value": "OpenTelemetry.Instrumentation.EntityFrameworkCore"
+            },
+            {
+              "key": "otel.scope.version",
+              "type": "string",
+              "value": "1.17.0-beta.1"
+            },
+            {
+              "key": "peer.service",
+              "type": "string",
+              "value": "/Users/anshprajapati/Desktop/Thinkschool/thinkschool/day-5/task-1/QuotesApi/quotes.db"
+            },
+            {
+              "key": "span.kind",
+              "type": "string",
+              "value": "client"
+            }
+          ],
+          "logs": [],
+          "processID": "p1",
+          "warnings": null
+        },
+        {
+          "traceID": "470426934cbbfd02ef4cba333bb9744c",
+          "spanID": "a076ef040376b5c9",
+          "operationName": "GET /api/quotes",
+          "references": [],
+          "startTime": 1786739382900117,
+          "duration": 2305,
+          "tags": [
+            {
+              "key": "http.request.method",
+              "type": "string",
+              "value": "GET"
+            },
+            {
+              "key": "http.response.status_code",
+              "type": "int64",
+              "value": 200
+            },
+            {
+              "key": "http.route",
+              "type": "string",
+              "value": "/api/quotes"
+            },
+            {
+              "key": "network.protocol.version",
+              "type": "string",
+              "value": "1.1"
+            },
+            {
+              "key": "otel.scope.name",
+              "type": "string",
+              "value": "Microsoft.AspNetCore"
+            },
+            {
+              "key": "server.address",
+              "type": "string",
+              "value": "localhost"
+            },
+            {
+              "key": "server.port",
+              "type": "int64",
+              "value": 5501
+            },
+            {
+              "key": "span.kind",
+              "type": "string",
+              "value": "server"
+            },
+            {
+              "key": "url.path",
+              "type": "string",
+              "value": "/api/quotes"
+            },
+            {
+              "key": "url.scheme",
+              "type": "string",
+              "value": "http"
+            },
+            {
+              "key": "user_agent.original",
+              "type": "string",
+              "value": "curl/8.7.1"
+            }
+          ],
+          "logs": [],
+          "processID": "p1",
+          "warnings": null
+        }
+      ],
+      "processes": {
+        "p1": {
+          "serviceName": "QuotesApi",
+          "tags": [
+            {
+              "key": "service.instance.id",
+              "type": "string",
+              "value": "9a1d8a31-6bc8-4284-9d76-4f3567e48d13"
+            },
+            {
+              "key": "telemetry.sdk.language",
+              "type": "string",
+              "value": "dotnet"
+            },
+            {
+              "key": "telemetry.sdk.name",
+              "type": "string",
+              "value": "opentelemetry"
+            },
+            {
+              "key": "telemetry.sdk.version",
+              "type": "string",
+              "value": "1.17.0"
+            }
+          ]
+        }
+      },
+      "warnings": null
+    }
+  ],
+  "total": 0,
+  "limit": 0,
+  "offset": 0,
+  "errors": null
+}
