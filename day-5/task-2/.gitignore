@@ -1,0 +1,6 @@
+QuotesApi/bin/
+QuotesApi/obj/
+QuotesApi/*.db
+QuotesApi/*.db-shm
+QuotesApi/*.db-wal
+.DS_Store
