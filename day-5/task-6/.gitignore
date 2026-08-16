@@ -1,0 +1,6 @@
+QuotesApi/bin/
+QuotesApi/obj/
+QuotesApi.Tests/bin/
+QuotesApi.Tests/obj/
+TestResults/
+.DS_Store
