@@ -1,0 +1,1 @@
+define("@microsoft/azureportal-reactview/hooks/Subscriptions",["require","exports","@microsoft/azureportal-reactview/DataManagement","@microsoft/azureportal-reactview/queries/Subscriptions"],function(e,r,t,o){"use strict";Object.defineProperty(r,"__esModule",{value:!0}),r.useGlobalSubscriptions=function(e){return(0,t.useQuery)(o.globalSubscriptionsQuery,[],e)}});

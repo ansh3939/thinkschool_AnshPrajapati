@@ -1,0 +1,1 @@
+define("Fx/Redirect",["require","exports","FxInternal/Redirect"],function(e,n,t){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),n.forceSignIn=function(e){return t.forceSignInEndPoint.invoke(FxImpl.Rpc.client,MsPortalFx.Base.Constants.Shell,e)}});

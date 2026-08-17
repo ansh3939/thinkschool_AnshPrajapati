@@ -1,0 +1,1 @@
+define("react-dom/client",["exports","react-dom"],function(e){"use strict";var t=require("react-dom");e.createRoot=t.createRoot,e.hydrateRoot=t.hydrateRoot});

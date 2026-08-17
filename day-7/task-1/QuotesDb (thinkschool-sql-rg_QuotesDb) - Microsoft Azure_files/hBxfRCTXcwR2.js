@@ -1,0 +1,1 @@
+define("@microsoft/azureportal-copilot/internal/CopilotInternal",["require","exports"],function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.setOnExecuteCopilotHandler=function(e,t){},t.setPort=function(e){}});
