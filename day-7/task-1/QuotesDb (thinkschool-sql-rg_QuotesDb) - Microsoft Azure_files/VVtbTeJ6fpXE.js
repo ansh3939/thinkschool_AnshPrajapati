@@ -1,0 +1,1 @@
+define("FxInternal/Resources/ControlPlaneValidatorsResources",{Azure:{Validators:{Policy:{clickDetails:"Policy details",policyDetailsFormat:"Policy Assignment: {0}"}}},Policy:{AutoSelect:{info:"Auto-selected based on policy assignment(s) for the selected scope."},ItemsAvailability:{info:"Item(s) availability based on policy assignment(s) for the selected scope."}}});

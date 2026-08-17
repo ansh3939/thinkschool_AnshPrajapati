@@ -1,0 +1,1 @@
+define("@azure/portal-internal-services/lib/Resources.resjson",{PolicyServiceResources:{clickDetails:"Policy details",policyDetailsFormat:"Policy Assignment: {0}"}});

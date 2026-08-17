@@ -1,0 +1,1 @@
+define("MsPortalImpl/Resources/SessionHandlerResources",{TimeoutDialog:{acceptButton:"Do not sign out",cancelButton:"Sign out now",description:"You will be signed out in less than one minute due to inactivity, do you wish to stay signed in?",title:"Logging out"}});

@@ -1,0 +1,1 @@
+define("FxHubs/Resources/KustoClientStrings",{Days:{fri:"Friday",mon:"Monday",sat:"Saturday",sun:"Sunday",thu:"Thursday",tue:"Tuesday",wed:"Wednesday"},Months:{apr:"April",aug:"August",dec:"December",feb:"February",jan:"January",jul:"July",jun:"June",mar:"March",may:"May",nov:"November",oct:"October",sep:"September"}});

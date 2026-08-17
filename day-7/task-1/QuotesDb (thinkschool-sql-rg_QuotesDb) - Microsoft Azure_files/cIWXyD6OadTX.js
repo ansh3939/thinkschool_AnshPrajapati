@@ -1,0 +1,1 @@
+define("Fx/Controls/ComboBox",["require","exports","FxInternal/Controls/DropDown"],function(e,o,r){"use strict";Object.defineProperty(o,"__esModule",{value:!0}),o.create=function(e,o){let n;const t={...o,filter:!0,filterPlaceholder:o.placeholder};return ko.ignoreDependencies(()=>{n=new r.ViewModel(e,t,!0)}),n}});
