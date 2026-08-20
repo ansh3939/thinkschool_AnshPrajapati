@@ -1,0 +1,37 @@
+Day 10 - Task 2: captured SQL output (from running QueryTranslationDemo)
+==========================================================================
+
+=== 1. Full entity query: db.Quotes.Where(q => q.Amount > 50) ===
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "q"."Id", "q"."Amount", "q"."AuthorName", "q"."Category", "q"."Notes", "q"."Text"
+FROM "Quotes" AS "q"
+WHERE ef_compare("q"."Amount", '50.0') > 0
+-> 4 quotes loaded, each with all 6 columns (including Notes, which nothing here needs).
+
+=== 2. Projected query: .Select(q => new QuoteDto { ... }) ===
+Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "q"."Id", "q"."Text", "q"."Amount"
+FROM "Quotes" AS "q"
+WHERE ef_compare("q"."Amount", '50.0') > 0
+-> 4 QuoteDto loaded, only Id/Text/Amount come back from the DB.
+
+=== 3. BEFORE: accidental client-side filtering ===
+Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "q"."Id", "q"."Amount", "q"."AuthorName", "q"."Category", "q"."Notes", "q"."Text"
+FROM "Quotes" AS "q"
+-> pulled 6 full rows from SQLite, then filtered down to 3 in memory.
+(Note: no WHERE clause at all here - every row in the table was pulled before
+the Amount > 100 filter ran, in plain C#, over the in-memory list.)
+
+=== 4. AFTER: filter pushed back into the query ===
+Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "q"."Id", "q"."Amount", "q"."AuthorName", "q"."Category", "q"."Notes", "q"."Text"
+FROM "Quotes" AS "q"
+WHERE ef_compare("q"."Amount", '100.0') > 0
+-> SQLite only returns the 3 matching rows this time.
+
+==========================================================================
+Captured from an actual `dotnet run` against the seeded quotes.db (6 rows).
+`ef_compare` shows up in the WHERE clause because SQLite has no native decimal
+type - EF Core's Sqlite provider stores decimal as TEXT and uses this function
+to compare values correctly instead of doing a lexical string comparison.
